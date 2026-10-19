@@ -49,19 +49,5 @@ class TaskBudgetGuardTests(unittest.TestCase):
         with self.assertRaises(BudgetExceeded):
             self.guard.reserve("task1", "b", "4000", "10000")
 
-
 if __name__ == "__main__":
     unittest.main()
-## Experimental contribution: Agent Task Budget Guard
-
-This fork adds a standalone Python prototype for cumulative task-level
-budget reservations across multiple agent actions.
-
-It demonstrates cumulative budget enforcement, idempotency-key consistency,
-and reservation release/commit semantics. Five unit tests cover these
-behaviors.
-
-**Limitations:** This is an in-memory prototype, not a durable financial
-ledger. It is not integrated into EXORYN's authorization pipeline and is
-not suitable for production financial execution. The upstream project
-and its existing implementation retain their original attribution.
